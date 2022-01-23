@@ -11,8 +11,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const uri =
-  "mongodb+srv://hamsaomar21:hamsaomar21@cluster0.iaryh.mongodb.net/chattestDB?retryWrites=true&w=majority";
+const uri = process.env.MONGO_DB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once("open", () => {
