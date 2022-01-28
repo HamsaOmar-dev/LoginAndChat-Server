@@ -22,7 +22,7 @@ const userRouter = require("./routes/user.js");
 const googleuserRouter = require("./routes/googleuser.js");
 
 app.use("/", userRouter);
-app.use("/google", googleuserRouter);
+app.use("/", googleuserRouter);
 
 app.listen(port, () => {
   console.log("listening on port " + port);
